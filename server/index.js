@@ -7,5 +7,4 @@ const port = 3000;
 
 app.listen(port, () => {
   console.log(`Listening on PORT:${port}`);
-  request(api).get("/").expect(200);
 });
