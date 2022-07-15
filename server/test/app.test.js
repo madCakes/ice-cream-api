@@ -9,9 +9,11 @@ describe("API", () => {
     api = app.listen(3030);
   });
 
-  afterAll(() => {
-    api = app.close();
+  afterAll((done) => {
+    api = app.close(done);
   });
 
-  it("Responds to a GET request at / with a 200 status", () => {});
+  it("Responds to a GET request at / with a 200 status", (done) => {
+    request(api).get("/".expect(200, done));
+  });
 });
